@@ -42,13 +42,13 @@ set(attribute='%{i,someHeader}', value=someValue)
 Set a response header only for matching requests.
 
 ```javascript
-regex('**/index.*') -> set(attribute='%{o,Cache-Control}', value='no-cahce')
+regex('**/index.*') -> set(attribute='%{o,Cache-Control}', value='no-cache')
 ```
 
 Set a response header for a specific path.
 
 ```javascript
-path('/freshcontent.html') -> set(attribute='%{o,Cache-Control}', value='no-cahce')
+path('/freshcontent.html') -> set(attribute='%{o,Cache-Control}', value='no-cache')
 ```
 
 Match certain SES-style URLs and store the place holders (referenced as exchange attributes) into HTTP request headers.

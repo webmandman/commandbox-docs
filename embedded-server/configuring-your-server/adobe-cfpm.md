@@ -19,6 +19,19 @@ set CFPM_SERVER=my-CommandBox-server-name
 cfpm install orm
 ```
 
+You can also load packages using `server.json` and calling `cfpm` as a script:
+
+```bash
+{
+    "scripts":{
+        "onServerInitialInstall":"cfpm install websocket"
+    }
+}
+```
+
+More information about scripts can be found in [Server Scripts](../server-scripts.md)
+
+
 ## Script Alias
 
 CommandBox adds a `/cf_scripts/scripts` alias for you any time you start an Adobe CF server.  This alias points to the same folders in the root of the Adobe WAR.  If you set a custom scripts src path in the CF administrator then you'll want to ensure CommandBox uses the expected alias.

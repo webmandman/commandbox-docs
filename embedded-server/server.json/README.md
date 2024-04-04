@@ -171,6 +171,9 @@ Every time you start a server, the settings used to start it are saved in a `ser
         "UndertowOptions": {
             "ALLOW_UNESCAPED_CHARACTERS_IN_URL": true
         }
+    },
+    "scripts":{
+        "onServerInitialInstall":"cfpm install mysql websocket"
     }
 }
 ```

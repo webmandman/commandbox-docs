@@ -33,7 +33,7 @@ loadModules( [
 ] );
 ```
 
-You can easily drive this function with `dire`c`toryList()` like so:
+You can easily drive this function with `directoryList()` like so:
 
 ```javascript
 loadModules(

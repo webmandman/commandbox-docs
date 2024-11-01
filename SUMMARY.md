@@ -179,6 +179,8 @@
     * [Working with server.json](embedded-server/server.json/working-with-server.json.md)
     * [Packaging Your Server](embedded-server/server.json/packaging-your-server.md)
     * [Using Multiple server.json Files](embedded-server/server.json/using-multiple-server.json-files.md)
+  * [Install Lucee core/lex files](embedded-server/install-lucee-core-lex-files.md)
+  * [WebSocket Support](embedded-server/websocket-support.md)
 * [Package Management](package-management/README.md)
   * [Installing Packages](package-management/installing-packages/README.md)
     * [Installation Path](package-management/installing-packages/installation-path.md)

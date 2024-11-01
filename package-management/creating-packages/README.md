@@ -39,6 +39,12 @@ package set location=forgeboxStorage
 
 When you publish a package, CommandBox will automatically zip up your package and send it to ForgeBox.
 
+CommandBox will also create an MD5 hash of the binary when publishing.  Any time the package is downloaded, CommandBox will verify the binary hash of what is downloaded.
+
+## Custom binary hash
+
+When using ForgeBox storage, we calculate the binary hash of your package for you, but when you are providing your own HTTP storage on S3 or elsewhere, you can still include an MD5 hash of the binary directly in your `box.json` via a `binaryHash` key which needs to be present when running the `publish` command.  The value should change any time the actual binary is updated and will be sent automatically to ForgeBox and verified on every future download.
+
 ## Forgebox `publish` Command
 
 When you run the `publish` command from the root of a package, the package will be created on ForgeBox. If the package already exists in ForgeBox, the new version will be added. If the version already exists, the package metadata will be updated.

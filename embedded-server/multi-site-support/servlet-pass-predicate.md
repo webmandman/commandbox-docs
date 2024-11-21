@@ -23,7 +23,7 @@ In all cases with the legacy setup, there is always a check of some kind that de
 As of CommandBox 6, we have the same setting and it can be set as `web.servletPassPredicate` which is simply an [Undertow Predicate](../configuring-your-server/server-rules/). By default, CommandBox uses the following predicate for the `servletPassPredicate`:
 
 ```javascript
-regex( '^/(.+?\\.cf[cm])(/.*)?$' )
+regex( '^/(.+?\\.cf[cms])(/.*)?$' ) or regex( '^/(.+?\\.bx[sm]{0,1})(/.*)?$' )
 ```
 
 So the URI `/index.cfm` will get sent to the servlet, but `/test.txt` would just get sent by the static file resource handler. You can customize this if necessary with any valid Undertow predicate. It can even be different on a per-site basis by setting it inside the `sites` object or `.site.json` file for a given site.
@@ -33,10 +33,10 @@ So the URI `/index.cfm` will get sent to the servlet, but `/test.txt` would just
 server set web.servletPassPredicate=true
 
 # Only serve CF files out of the cgi folder
-server set web.servletPassPredicate="regex( '^/cgi/(.+?\\.cf[cm])(/.*)?$' )"
+server set web.servletPassPredicate="regex( '^/cgi/(.+?\\.cf[cms])(/.*)?$' )"
 
 # process CFM files or anything in the /REST/ directory
-server set web.servletPassPredicate="regex( '^/(.+?\\.cf[cm])(/.*)?$' ) or path-prefix-nocase( /REST/ )"
+server set web.servletPassPredicate="regex( '^/(.+?\\.cf[cms])(/.*)?$' ) or regex( '^/(.+?\\.bx[sm]{0,1})(/.*)?$' ) or path-prefix-nocase( /REST/ )"
 ```
 
 Note, be careful as your servlet pass setting may send `.cfm` files to the static file handler. CommandBox has a [failsafe in place](../configuring-your-server/server-rules/allowed-static-files.md) to prevent the source code from being returned, but you should still use caution when configuring this.

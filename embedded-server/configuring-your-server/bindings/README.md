@@ -264,7 +264,7 @@ To configure multiple SSL certs on the same binding, use a `certs` array of obje
                         "keyFile" : "../certs/site1Key.pem"
                     },
                     {
-                        "certFile" : "../certs/site12Cert.pem",
+                        "certFile" : "../certs/site2Cert.pem",
                         "keyFile" : "../certs/site2Key.pem"
                     },
                     {

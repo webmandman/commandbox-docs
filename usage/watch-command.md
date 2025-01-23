@@ -30,7 +30,7 @@ If your watcher seems slow, unresponsive, or is failing to notice some file chan
 
 ### Parameters
 
-* `paths` - Comma-delimited list of file globbing paths to watch relative to the working directory, defaults to \*\*
+* `paths` - An array of file globbing paths, or any number of string globbing arguments to watch relative to the working directory, defaults to \*\*
 * `excludePaths` - Comma-delimited list of file globbing paths to exclude relative to the working directory.
 * `command` - The command to run when the watcher fires
 * `delay` - How may milliseconds to wait before polling for changes, defaults to 500 ms
